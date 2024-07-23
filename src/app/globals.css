@@ -69,16 +69,16 @@
 }
 @layer components {
   .btnblack {
-    @apply bg-black rounded-md  border-[#262626]  border text-white;
+    @apply bg-black w-full md:w-fit rounded-md  border-[#262626]  border text-white;
   }
   .btnblackp {
-    @apply py-[14px] px-[20px] bg-black rounded-md  border-[#262626]  border text-white;
+    @apply py-[14px] w-full md:w-fit px-[20px] bg-black rounded-md  border-[#262626]  border text-white;
   }
   .btngrayp {
-    @apply py-[14px] px-[20px] bg-[#1A1A1A] rounded-md  border-[#262626]  border text-white;
+    @apply py-[14px] w-full md:w-fit px-[20px] bg-[#1A1A1A] rounded-md  border-[#262626]  border text-white;
   }
   .btnpurple {
-    @apply py-[14px] px-[20px] bg-[#703BF7] rounded-md  text-white;
+    @apply py-[14px] w-full md:w-fit px-[20px] bg-[#703BF7] rounded-md  text-white;
   }
   .h1text {
     @apply text-[46px]  font-medium leading-[120%];
@@ -88,6 +88,6 @@
   }
 }
 body {
-  background-color: black;
+  background-color: #141414;
   color: white;
 }
