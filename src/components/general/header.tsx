@@ -52,7 +52,7 @@ const Header = (props: Props) => {
           alt="abstarct"
         />
         <Nav />
-        <section className=" px-4 md:pl-4 py-10 xl:px-20 2xl:pl-[162px] md:py-0 bg-[#141414]   relative flex lg:flex-row flex-col-reverse flex-1">
+        <section className=" px-4 md:px-0 md:pl-4 py-10 xl:pl-20 2xl:pl-[162px] md:py-0 bg-[#141414]   relative flex lg:flex-row flex-col-reverse flex-1">
           <div className=" flex-1   flex justify-center items-center h-full">
             <div className="flex flex-col mx-auto w-full   md:max-w-[610px]">
               <h1 className=" text-[28px] md:h1text mb-5">

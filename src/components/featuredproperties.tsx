@@ -97,7 +97,7 @@ interface Property {
 }
 export const Featuredproperties = (props: Props) => {
   return (
-    <div className="px-4 xl:px-20 2xl:pl-[162px] py-[110px]">
+    <div className="px-4 xl:px-20 2xl:pl-[162px] py-[61px] lg:py-[90px] 2xl:py-[110px]">
       <TitleSec
         link="View All Properties"
         title="Featured Properties"
@@ -151,7 +151,7 @@ const Card = ({ description, features, image, price, title }: Property) => {
         src={image}
       />
       <p className="cardtext mb-1.5">{title}</p>
-      <p className="cardsubtext mb-7">{title}</p>
+      <p className="cardsubtext mb-7">{description}</p>
       <div className="flex mb-6 w-full  gap-2 flex-wrap ">
         {features.map((feature, i) => (
           <div className="md:w-[calc(33.333333%-32px)] min-w-fit" key={i}>
