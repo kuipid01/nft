@@ -72,10 +72,10 @@
     @apply bg-black w-full md:w-fit rounded-md  border-[#262626]  border text-white;
   }
   .btnblackp {
-    @apply py-[14px] w-full md:w-fit px-[20px] bg-black rounded-md  border-[#262626]  border text-white;
+    @apply py-[14px] w-fit px-[20px] bg-black rounded-md  border-[#262626]  border text-white;
   }
   .btngrayp {
-    @apply py-[14px] w-full md:w-fit px-[20px] bg-[#1A1A1A] rounded-md  border-[#262626]  border text-white;
+    @apply py-[14px] w-fit px-[20px] bg-[#1A1A1A] rounded-md  border-[#262626]  border text-white;
   }
   .btnpurple {
     @apply py-[14px] w-fit  md:w-fit px-[20px] bg-[#703BF7] rounded-md  text-white;

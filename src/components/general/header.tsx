@@ -63,7 +63,9 @@ const Header = (props: Props) => {
                 Explore our listings to find the home that matches your dreams.
               </p>
               <div className="flex flex-col md:flex-row mb-[50px] gap-4 items-center">
-                <button className=" btnblackp">Learn More</button>
+                <button className=" w-full md:w-fit btnblackp">
+                  Learn More
+                </button>
                 <button className=" w-full md:w-fit btnpurple">
                   Browse Properties
                 </button>
