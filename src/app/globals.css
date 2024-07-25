@@ -78,13 +78,28 @@
     @apply py-[14px] w-full md:w-fit px-[20px] bg-[#1A1A1A] rounded-md  border-[#262626]  border text-white;
   }
   .btnpurple {
-    @apply py-[14px] w-full md:w-fit px-[20px] bg-[#703BF7] rounded-md  text-white;
+    @apply py-[14px] w-fit  md:w-fit px-[20px] bg-[#703BF7] rounded-md  text-white;
   }
   .h1text {
     @apply text-[46px]  font-medium leading-[120%];
   }
+  .titletext {
+    @apply text-[28px] md:text-[48px]  leading-[150%] font-semibold  text-white;
+  }
+  .subtitletext {
+    @apply text-[14px] md:text-[18px]  leading-[150%] font-medium  text-[#999999];
+  }
   .greyp {
     @apply text-[16px] text-[#999999] font-medium leading-[120%];
+  }
+  .cardbg {
+    @apply rounded-[12px] border-[#262626]  border bg-[#141414];
+  }
+  .cardtext {
+    @apply text-[24px] leading-[150%]  font-semibold text-white;
+  }
+  .cardsubtext {
+    @apply text-[18px] leading-[150%]  font-medium text-[#999999];
   }
 }
 body {

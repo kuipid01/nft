@@ -52,7 +52,7 @@ const Header = (props: Props) => {
           alt="abstarct"
         />
         <Nav />
-        <section className=" px-4 md:pl-4 py-10 xl:pl-20 md:py-0 bg-[#141414]   relative flex lg:flex-row flex-col-reverse flex-1">
+        <section className=" px-4 md:pl-4 py-10 xl:px-20 2xl:pl-[162px] md:py-0 bg-[#141414]   relative flex lg:flex-row flex-col-reverse flex-1">
           <div className=" flex-1   flex justify-center items-center h-full">
             <div className="flex flex-col mx-auto w-full   md:max-w-[610px]">
               <h1 className=" text-[28px] md:h1text mb-5">
@@ -64,7 +64,9 @@ const Header = (props: Props) => {
               </p>
               <div className="flex flex-col md:flex-row mb-[50px] gap-4 items-center">
                 <button className=" btnblackp">Learn More</button>
-                <button className=" btnpurple">Browse Properties</button>
+                <button className=" w-full md:w-fit btnpurple">
+                  Browse Properties
+                </button>
               </div>
               <div className="flex flex-row w-full  flex-wrap gap-3 md:gap-4 items-center">
                 {stats.map((t, i) => (
@@ -103,7 +105,7 @@ const Header = (props: Props) => {
         </section>
       </div>
       <div className=" px-4">
-        <div className=" p-[10px] rounded-[12px] border-[#262626]  border bg-[#141414] justify-center items-center  mb-[61px] gap-[10px] md:gap-5 w-full flex flex-wrap mt-10">
+        <div className=" p-[10px] cardbg justify-center items-center  mb-[61px] gap-[10px] md:gap-5 w-full flex flex-wrap mt-10">
           {cards.map((card, i) => (
             <div
               key={i}
