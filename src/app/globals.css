@@ -84,10 +84,10 @@
     @apply text-[46px]  font-medium leading-[120%];
   }
   .titletext {
-    @apply text-[28px] md:text-[48px]  leading-[150%] font-semibold  text-white;
+    @apply text-[28px] md:text-[38px] lg:text-[48px]  leading-[150%] font-semibold  text-white;
   }
   .subtitletext {
-    @apply text-[14px] md:text-[18px]  leading-[150%] font-medium  text-[#999999];
+    @apply text-[14px] md:text-[16px] lg:text-[18px]  leading-[150%] font-medium  text-[#999999];
   }
   .greyp {
     @apply text-[16px] text-[#999999] font-medium leading-[120%];
@@ -100,6 +100,9 @@
   }
   .cardsubtext {
     @apply text-[18px] leading-[150%]  font-medium text-[#999999];
+  }
+  .cont {
+    @apply px-4 xl:px-20 2xl:px-[162px] py-[61px] lg:py-[90px] 2xl:py-[110px];
   }
 }
 body {

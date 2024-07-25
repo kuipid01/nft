@@ -61,7 +61,7 @@ interface Review {
 }
 export const Reviews = (props: Props) => {
   return (
-    <div className="px-4 xl:px-20 2xl:pl-[162px] py-[61px] lg:py-[90px] 2xl:py-[110px]">
+    <div className="cont">
       <TitleSec
         link="View All Testimonials"
         title="What Our Clients Say"
