@@ -69,32 +69,74 @@ const Header = (props: Props) => {
                   translateY: 0,
                   clipPath: "polygon(0 0, 100% 0, 100% 99%, 0% 100%)",
                 }}
+                transition={{
+                  ease: "easeInOut",
+                }}
                 className=" text-[28px] md:h1text mb-5"
               >
                 Discover Your Dream <br /> Property with Estatein
               </motion.h1>
               <motion.p
-                initial={{ opacity: 0, translateY: -30 }}
-                animate={{ opacity: 1, translateY: 0 }}
+                initial={{
+                  opacity: 0,
+                  translateY: -30,
+
+                  clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+                }}
+                animate={{
+                  opacity: 1,
+                  translateY: 0,
+                  clipPath: "polygon(0 0, 100% 0, 100% 99%, 0% 100%)",
+                }}
                 transition={{
-                  delay: 0.3,
+                  ease: "easeInOut",
+                  delay: 0.2,
                 }}
                 className=" greyp mb-[50px]"
               >
                 Your journey to finding the perfect property begins here.
                 Explore our listings to find the home that matches your dreams.
               </motion.p>
-              <div className="flex flex-col md:flex-row mb-[50px] gap-4 items-center">
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  translateY: -30,
+
+                  clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+                }}
+                animate={{
+                  opacity: 1,
+                  translateY: 0,
+                  clipPath: "polygon(0 0, 100% 0, 100% 99%, 0% 100%)",
+                }}
+                transition={{
+                  ease: "easeInOut",
+                  delay: 0.3,
+                }}
+                className="flex flex-col md:flex-row mb-[50px] gap-4 items-center"
+              >
                 <button className=" w-full md:w-fit btnblackp">
                   Learn More
                 </button>
                 <button className=" w-full md:w-fit btnpurple">
                   Browse Properties
                 </button>
-              </div>
+              </motion.div>
               <div className="flex flex-row w-full  flex-wrap gap-3 md:gap-4 items-center">
                 {stats.map((t, i) => (
-                  <div
+                  <motion.div
+                    initial={{
+                      opacity: 0,
+                      translateY: 30 + i,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      translateY: 0,
+                    }}
+                    transition={{
+                      ease: "easeInOut",
+                      delay: 0.1 * i,
+                    }}
                     key={i}
                     className="btngrayp w-[calc(50%-6px)]  md:w-auto md:last-of-type:w-auto last-of-type:w-full flex flex-col gap-[2px]"
                   >
@@ -102,7 +144,7 @@ const Header = (props: Props) => {
                     <p className="md:text-left text-center text-[#999999] text-nowrap text-sm">
                       {t.title}
                     </p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -120,8 +162,8 @@ const Header = (props: Props) => {
               alt="heade"
               className=" object-cover relative z-10 w-full h-full md:w-auto"
             />
-            <Image
-              src={subimage}
+            <motion.img
+              src={subimage.src}
               alt="discover "
               className="absolute 2xl:left-[-96px] xl:left-[-65px] z-50  top-24"
             />
@@ -131,7 +173,7 @@ const Header = (props: Props) => {
       <div className=" px-4">
         <div className=" p-[10px] cardbg justify-center items-center  mb-[61px] gap-[10px] md:gap-5 w-full flex flex-wrap mt-10">
           {cards.map((card, i) => (
-            <div
+            <motion.div
               key={i}
               className=" flex flex-col h-[144px] justify-center  w-[calc(50%-10px)] md:w-[calc(25%-20px)]  items-center gap-[14px] btngrayp "
             >
@@ -144,7 +186,7 @@ const Header = (props: Props) => {
               <p className=" text-[14px]  text-center font-semibold">
                 {card.title}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
