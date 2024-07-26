@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Nav from "./nav";
 import bgspiralimage from "@/app/assets/AbstractDesign.svg";
@@ -8,6 +9,7 @@ import assetsicon from "@/app/assets/assetsicon.png";
 import propertyicon from "@/app/assets/propertyicon.png";
 import smarthomeicon from "@/app/assets/smarthomeicon.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
 interface Props {}
 
 const Header = (props: Props) => {
@@ -55,13 +57,33 @@ const Header = (props: Props) => {
         <section className=" px-4 md:px-0 md:pl-4 py-10 xl:pl-20 2xl:pl-[162px] md:py-0 bg-[#141414]   relative flex lg:flex-row flex-col-reverse flex-1">
           <div className=" flex-1   flex justify-center items-center h-full">
             <div className="flex flex-col mx-auto w-full   md:max-w-[610px]">
-              <h1 className=" text-[28px] md:h1text mb-5">
+              <motion.h1
+                initial={{
+                  opacity: 0,
+                  translateY: -30,
+
+                  clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
+                }}
+                animate={{
+                  opacity: 1,
+                  translateY: 0,
+                  clipPath: "polygon(0 0, 100% 0, 100% 99%, 0% 100%)",
+                }}
+                className=" text-[28px] md:h1text mb-5"
+              >
                 Discover Your Dream <br /> Property with Estatein
-              </h1>
-              <p className=" greyp mb-[50px]">
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, translateY: -30 }}
+                animate={{ opacity: 1, translateY: 0 }}
+                transition={{
+                  delay: 0.3,
+                }}
+                className=" greyp mb-[50px]"
+              >
                 Your journey to finding the perfect property begins here.
                 Explore our listings to find the home that matches your dreams.
-              </p>
+              </motion.p>
               <div className="flex flex-col md:flex-row mb-[50px] gap-4 items-center">
                 <button className=" w-full md:w-fit btnblackp">
                   Learn More
