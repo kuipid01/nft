@@ -104,6 +104,12 @@
   .cont {
     @apply px-4 xl:px-20 2xl:px-[162px] py-[61px] lg:py-[90px] 2xl:py-[110px];
   }
+  .smallcont {
+    @apply px-4 xl:px-20 2xl:px-[162px] py-7;
+  }
+  .smallroundedcont {
+    @apply flex justify-center items-center rounded-full border border-[#262626]  size-11;
+  }
 }
 body {
   background-color: #141414;

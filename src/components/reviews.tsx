@@ -84,7 +84,7 @@ export const Reviews = (props: Props) => {
           <span className="subtitletext">60</span>
         </span>
         <div className="flex gap-2">
-          <div className=" flex justify-center items-center rounded-full border border-[#262626]  size-11 ">
+          <div className=" smallroundedcont ">
             <ArrowLeft color="#808080" />
           </div>
           <span className=" items-center md:hidden  flex gap-[2px]">
@@ -94,7 +94,7 @@ export const Reviews = (props: Props) => {
             <span className="subtitletext">of</span>
             <span className="subtitletext">60</span>
           </span>
-          <div className=" flex justify-center items-center rounded-full border border-[#262626]  size-11 ">
+          <div className=" smallroundedcont ">
             <ArrowRight />
           </div>
         </div>

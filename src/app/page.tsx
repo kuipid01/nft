@@ -1,5 +1,6 @@
 import Cta from "@/components/cta";
 import { Featuredproperties } from "@/components/featuredproperties";
+import { Footer } from "@/components/footer";
 import Header from "@/components/general/header";
 import Nav from "@/components/general/nav";
 import { Questions } from "@/components/questions";
@@ -13,6 +14,7 @@ export default function Home() {
       <Featuredproperties />
       <Reviews />
       <Cta />
+      <Footer />
     </main>
   );
 }

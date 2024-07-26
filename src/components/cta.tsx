@@ -10,6 +10,10 @@ const Cta = () => {
         src={ctaabstarct}
         alt="abstart"
       />
+      <div className=" absolute w-[568px]  scale-x-[-1] scale-y-[-1] -bottom-[63px] -right-[92px]">
+        <Image src={ctaabstarct} className=" object-cover" alt="abstart" />
+      </div>
+
       <div className=" relative flex justify-between  items-center flex-col md:flex-row">
         <div className=" flex flex-col ">
           {" "}
