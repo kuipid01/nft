@@ -135,7 +135,7 @@ export const Footer = (props: Props) => {
           </div>
         </div>
 
-        <div className="flex flex-wrap w-full gap-5  justify-between lg:flex-nowrap lg:gap-[100.25px]">
+        <div className="flex flex-wrap w-full gap-5  justify-between xl:flex-nowrapxl:gap-[100.25px]">
           {links.map((link, index) => (
             <LinkItem key={index} link={link} />
           ))}
@@ -182,7 +182,7 @@ const LinkItem: React.FC<ParentLinkItemProps | ChildLinkItemProps> = ({
   if ("title" in link) {
     // This is a parent link
     return (
-      <div className=" relative h-fit  px-5 after:content-[''] after:absolute after:-right-[0px]  after:bottom-0 after:h-full after:w-[1px] after:bg-[#262626]">
+      <div className=" relative h-fit  px-5 lg:after:hidden after:content-[''] after:absolute after:-right-[0px]  after:bottom-0 after:h-full after:w-[1px] after:bg-[#262626]">
         <h4 className="mb-[30px]    subtitletext">{link.title}</h4>
         <ul className=" flex border-[#262626] border-b lg:border-none  pb-5 items-start bg-sgreen-300 flex-col gap-5">
           {link.children.map((item, index) => (
