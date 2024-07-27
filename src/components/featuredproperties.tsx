@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { PriBtn, TitleSec } from "./general/generalcomps";
 import Image from "next/image";
@@ -17,7 +19,7 @@ import {
   Sun,
   Trees,
 } from "lucide-react";
-
+import { motion } from "framer-motion";
 interface Props {}
 const properties = [
   {
@@ -95,6 +97,23 @@ interface Property {
   features: Feature[];
   price: number;
 }
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0.5,
+      staggerDirection: -1,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
+
 export const Featuredproperties = (props: Props) => {
   return (
     <div className="px-4 xl:px-20 2xl:pl-[162px] py-[61px] lg:py-[90px] 2xl:py-[110px]">
@@ -103,11 +122,16 @@ export const Featuredproperties = (props: Props) => {
         title="Featured Properties"
         subtext="Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein. Click View Details for more information."
       />
-      <div className="flex mt-20 md:mb-10 mb-[30px] gap-8  flex-wrap ">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        className="flex mt-20 md:mb-10 mb-[30px] gap-8  flex-wrap "
+      >
         {properties.map((card: Property, i) => (
           <Card key={i} {...card} />
         ))}
-      </div>
+      </motion.div>
       <div className=" justify-between flex items-center">
         <button className="block w-fit md:hidden text-nowrap btngrayp">
           View All Properties
@@ -142,7 +166,10 @@ export const Featuredproperties = (props: Props) => {
 interface cardprop {}
 const Card = ({ description, features, image, price, title }: Property) => {
   return (
-    <div className="p-6 md:p-[30px] 2xl:p-10 shrink-0 md:w-[calc(33.333333%-32px)] w-full max-w-lg cardbg">
+    <motion.div
+      variants={item}
+      className="p-6 md:p-[30px] 2xl:p-10 shrink-0 md:w-[calc(33.333333%-32px)] w-full max-w-lg cardbg"
+    >
       <Image
         height={318}
         width={432}
@@ -171,6 +198,6 @@ const Card = ({ description, features, image, price, title }: Property) => {
         </div>
         <PriBtn styles="text-[14px]" text="View Property Details" />
       </div>
-    </div>
+    </motion.div>
   );
 };

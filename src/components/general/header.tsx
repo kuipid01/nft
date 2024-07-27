@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import Nav from "./nav";
 import bgspiralimage from "@/app/assets/AbstractDesign.svg";
 import homehead from "@/app/assets/homehead.png";
@@ -9,10 +9,16 @@ import assetsicon from "@/app/assets/assetsicon.png";
 import propertyicon from "@/app/assets/propertyicon.png";
 import smarthomeicon from "@/app/assets/smarthomeicon.png";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 interface Props {}
 
 const Header = (props: Props) => {
+  const circleRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: circleRef,
+    offset: ["end end", "end start"],
+  });
+  const scrollYValue = useTransform(scrollYProgress, [0, 1], [-150, 150]);
   const stats = [
     {
       val: "200+",
@@ -164,6 +170,18 @@ const Header = (props: Props) => {
             />
             <motion.img
               src={subimage.src}
+              initial={{
+                opacity: 0,
+                clipPath: "circle(0% at 50% 5%)",
+              }}
+              animate={{
+                opacity: 1,
+                clipPath: "circle(50% at 50% 50%)",
+              }}
+              transition={{
+                ease: "circInOut",
+                delay: 0.2,
+              }}
               alt="discover "
               className="absolute 2xl:left-[-96px] xl:left-[-65px] z-50  top-24"
             />
@@ -171,24 +189,46 @@ const Header = (props: Props) => {
         </section>
       </div>
       <div className=" px-4">
-        <div className=" p-[10px] cardbg justify-center items-center  mb-[61px] gap-[10px] md:gap-5 w-full flex flex-wrap mt-10">
-          {cards.map((card, i) => (
-            <motion.div
-              key={i}
-              className=" flex flex-col h-[144px] justify-center  w-[calc(50%-10px)] md:w-[calc(25%-20px)]  items-center gap-[14px] btngrayp "
-            >
-              <Image
-                width={48}
-                height={48}
-                src={card.icon?.src || ""}
-                alt="icon"
-              />
-              <p className=" text-[14px]  text-center font-semibold">
-                {card.title}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div className=" py-[10px] overflow-clip cardbg  mb-[61px]  mt-10 ">
+          <motion.div
+            className=" justify-start items-center  px-[20px]   w-[200%] flex "
+            initial={{
+              translateX: "0%",
+            }}
+            animate={{
+              translateX: "-50%",
+              marginLeft: 20,
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 10,
+              repeatType: "loop",
+              ease: "linear",
+            }}
+          >
+            {" "}
+            {[0, 1].map((card, i) => (
+              <div key={i} className=" w-1/2 shrink-0 gap-5  flex">
+                {cards.map((card, i) => (
+                  <motion.div
+                    key={i}
+                    className=" flex shrink-0 flex-col h-[144px] justify-center  w-[calc(25%-20px)]  items-center gap-[14px] btngrayp "
+                  >
+                    <Image
+                      width={48}
+                      height={48}
+                      src={card.icon?.src || ""}
+                      alt="icon"
+                    />
+                    <p className=" text-[14px]  text-center font-semibold">
+                      {card.title}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
     </>
   );
