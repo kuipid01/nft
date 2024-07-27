@@ -16,9 +16,10 @@ const Header = (props: Props) => {
   const circleRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: circleRef,
-    offset: ["end end", "end start"],
+    offset: ["start end", "end start"],
   });
-  const scrollYValue = useTransform(scrollYProgress, [0, 1], [-150, 150]);
+  const scrollYValue = useTransform(scrollYProgress, [0, 1], [150, -150]);
+  console.log(scrollYValue);
   const stats = [
     {
       val: "200+",
@@ -169,6 +170,10 @@ const Header = (props: Props) => {
               className=" object-cover relative z-10 w-full h-full md:w-auto"
             />
             <motion.img
+              ref={circleRef}
+              style={{
+                translateY: scrollYValue,
+              }}
               src={subimage.src}
               initial={{
                 opacity: 0,
@@ -183,7 +188,7 @@ const Header = (props: Props) => {
                 delay: 0.2,
               }}
               alt="discover "
-              className="absolute 2xl:left-[-96px] xl:left-[-65px] z-50  top-24"
+              className="absolute 2xl:left-[-96px] transition-all duration-200 ease-in-out xl:left-[-65px] z-50  top-24"
             />
           </div>
         </section>
